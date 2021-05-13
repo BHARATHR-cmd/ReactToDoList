@@ -25,17 +25,18 @@ const AddNote = ({ handleAddNote }) => {
         placeholder = 'Type to add a note...'
         value = { noteText }
         onChange = { handleChange } >
-        < /textarea> <
+        <
+        /textarea> <
         div className = 'note-footer' >
         <
-        small > { characterLimit - noteText.length }
+        small > { characterLimit - noteText.length } -
         Remaining <
         /small> <
         button className = 'save'
         onClick = { handleSaveClick } >
         Save <
-        /button> <
-        /div> <
+        /button> < /
+        div > <
         /div>
     );
 };
