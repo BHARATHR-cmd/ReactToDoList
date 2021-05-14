@@ -40,3 +40,14 @@
         cursor: pointer;
         align-self: center;
     }
+    
+    .another-one {
+        margin-top: 10px;
+        padding: 1rem;
+        background-color: rgb(104, 72, 248);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        align-self: center;
+    }

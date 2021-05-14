@@ -1,6 +1,6 @@
 import React from 'react';
 import Popup from './Popup';
-import FetchRandomUser from './randomjoke';
+import Randomjoke from './Randomjoke';
 import { useState } from 'react';
 
 function Header({ handleToggleDarkMode }) {
@@ -28,7 +28,7 @@ function Header({ handleToggleDarkMode }) {
         }
         className = 'save' >
         Random Joke <
-        /button> <Popup trigger={buttonPopup} setTrigger={setButtonPopup}><FetchRandomUser/ > < /Popup> < /
+        /button> <Popup trigger={buttonPopup} setTrigger={setButtonPopup}><Randomjoke/ > < /Popup> < /
         div >
     );
 };

@@ -1,38 +1,24 @@
-import React from "react";
-import './popup.css'
+import React, { useState, useEffect } from 'react'
+const API_URL = 'https://official-joke-api.appspot.com/random_joke';
 
-export default class FetchRandomUser extends React.Component {
-    state = {
-        loading: true,
-        joke: null
-    };
-
-    async componentDidMount() {
-        const url = "https://official-joke-api.appspot.com/random_joke";
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({ joke: data, loading: false });
+function Randomjoke() {
+    const [joke, setjoke] = useState('');
+    const generateJoke = () => {
+        fetch(API_URL)
+            .then(res => res.json())
+            .then(data => setjoke(`${data.setup} ${data.punchline}`));
     }
-
-    render() {
-        if (this.state.loading) {
-            return <div > loading... < /div>;
-        }
-
-        if (!this.state.joke) {
-            return <div > didn 't get a joke</div>;
-        }
-
-        return ( 
-            <
-            div >
-            <p className="setup"> { this.state.joke.setup } < /p>
-             < p className="line"> { this.state.joke.punchline } < /p>
-           
-       
-            <
-            /div>
-            
-        );
-    }
+    useEffect(() => {
+        generateJoke();
+    }, [])
+    return ( <
+        div >
+        <
+        p > { joke } < /p> <
+        button className = 'another-one'
+        onClick = { generateJoke } > Another one😂 < /button>    < /
+        div >
+    );
 }
+
+export default Randomjoke;
